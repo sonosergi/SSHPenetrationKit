@@ -5,11 +5,11 @@ SSHPenetrationKit is a penetration testing tool designed specifically to assess 
 This Python script is designed for SSH brute force attacks, allowing you to test the security of SSH servers by attempting to authenticate with a list of passwords.
 ### Prerequisites
 * Python 3.x installed on your system.
-*  The paramiko library installed. You can install it using:
+*  The Paramiko library installed. You can install it using:
 ```shell
 pip install paramiko
 ```
-* The colorama library installed. You can install it using:
+* The Colorama library installed. You can install it using:
 ```shell
 pip install colorama
 ```
@@ -29,18 +29,18 @@ If you encounter issues with firewalls or detection systems, you can try utilizi
 
 ## SSH Tunnels
 ### Installation
-Ensure that you have the 'sshtunnel' library installed. If it is not already installed, run the following command in your terminal:
+Ensure that you have the `sshtunnel` library installed. If it is not already installed, run the following command in your terminal:
 ```shell
 pip install sshtunnel
 ```
 ### Configuration
 Open the Python script file in a text editor.
-Import the SSHTunnelForwarder class from sshtunnel at the beginning of the script:
+Import the `SSHTunnelForwarder` class from `sshtunnel` at the beginning of the script:
 ```python
 from sshtunnel import SSHTunnelForwarder
 ```
 ### Code Modification
-Locate the 'is_ssh_open' function in the script and make the following changes:
+Locate the `is_ssh_open` function in the script and make the following changes:
 1. Create an instance of 'SSHTunnelForwarder' to configure the SSH tunnel:
 ```python
 tunnel = SSHTunnelForwarder(
@@ -53,7 +53,7 @@ tunnel = SSHTunnelForwarder(
 ```python
 tunnel.start()
 ```
-3. Modify the 'client.connect(...)' line to establish the SSH connection through the tunnel:
+3. Modify the `client.connect(...)` line to establish the SSH connection through the tunnel:
 ```pyhton
 client.connect(
     hostname='localhost',  # Connect to localhost through the SSH tunnel
@@ -70,15 +70,15 @@ tunnel.stop()
 
 ## Covert Protocols
 ### Configuration
-Before using covert protocols, you need to configure and run the corresponding tools such as ptunnel or iodine on your system and the target server. Follow the specific instructions of each tool to configure the covert protocols.
+Before using covert protocols, you need to configure and run the corresponding tools such as `ptunnel` or `iodine` on your system and the target server. Follow the specific instructions of each tool to configure the covert protocols.
 ### Code Modification
-Locate the is_ssh_open function in the script and modify the SSH connection to redirect the traffic through the covert protocol instead of a direct connection to the host.
+Locate the `is_ssh_open` function in the script and modify the SSH connection to redirect the traffic through the covert protocol instead of a direct connection to the host.
 
 ## Reverse Proxies
 ### Configuration
-Configure and run a reverse proxy tool such as sshuttle or Proxychains on your system and the target server. Follow the specific instructions of each tool to configure and run the reverse proxy.
+Configure and run a reverse proxy tool such as `sshuttle` or `Proxychains` on your system and the target server. Follow the specific instructions of each tool to configure and run the reverse proxy.
 ### Code Modification
-Locate the is_ssh_open function in the script and modify the SSH connection to establish it through the reverse proxy instead of a direct connection to the host.
+Locate the `is_ssh_open` function in the script and modify the SSH connection to establish it through the reverse proxy instead of a direct connection to the host.
 
 ## Important Notes
 
