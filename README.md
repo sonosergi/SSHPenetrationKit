@@ -1,16 +1,18 @@
 # SSHPenetrationKit
 SSHPenetrationKit is a penetration testing tool designed specifically to assess the security of SSH (Secure Shell) servers. This repository contains the source code and resources for SSHPenetrationKit, enabling users to contribute, enhance, and leverage its capabilities in securing SSH deployments.
 
----
-
 ## SSH Brute Force Script
-
 This Python script is designed for SSH brute force attacks, allowing you to test the security of SSH servers by attempting to authenticate with a list of passwords.
 ### Prerequisites
 * Python 3.x installed on your system.
-*  The paramiko library installed. You can install it using pip install paramiko.
-* The colorama library installed. You can install it using pip install colorama.
-
+*  The paramiko library installed. You can install it using:
+```shell
+pip install paramiko
+```
+* The colorama library installed. You can install it using:
+```shell
+pip install colorama
+```
 ### Usage
 1. Open a terminal or command prompt and navigate to the directory where you saved the script.
 2. Run the script using the following command:
@@ -22,8 +24,6 @@ python3 ssh_brute_force.py <hostname> [-P <passlist>] [-u <username>] [-f <fuzz_
 * -u <username> (optional): Specify the username to attempt authentication. If not provided, the script will use a default username.
 * -f <fuzz_length> (optional): Specify the length of the randomly generated password for fuzzing. If not provided, the script will not perform password fuzzing.
 3. The script will start attempting SSH connections using the provided parameters. If valid credentials are found, they will be saved in a file named credentials.txt in the same directory as the script.
-  
----
 
 If you encounter issues with firewalls or detection systems, you can try utilizing the following techniques:
 
@@ -79,8 +79,6 @@ Locate the is_ssh_open function in the script and modify the SSH connection to r
 Configure and run a reverse proxy tool such as sshuttle or Proxychains on your system and the target server. Follow the specific instructions of each tool to configure and run the reverse proxy.
 ### Code Modification
 Locate the is_ssh_open function in the script and modify the SSH connection to establish it through the reverse proxy instead of a direct connection to the host.
-
----
 
 ## Important Notes
 
