@@ -19,10 +19,10 @@ pip install colorama
 ```python
 python3 ssh_brute_force.py <hostname> [-P <passlist>] [-u <username>] [-f <fuzz_length>]
 ```
-* <hostname>: Replace it with the hostname or IP address of the target SSH server.
-* -P <passlist> (optional): Specify the path to a password wordlist file in .txt format. If not provided, a randomly generated password will be used for fuzzing.
-* -u <username> (optional): Specify the username to attempt authentication. If not provided, the script will use a default username.
-* -f <fuzz_length> (optional): Specify the length of the randomly generated password for fuzzing. If not provided, the script will not perform password fuzzing.
+* `<hostname>`: Replace it with the hostname or IP address of the target SSH server.
+* -P `<passlist>` (optional): Specify the path to a password wordlist file in .txt format. If not provided, a randomly generated password will be used for fuzzing.
+* -u `<username>` (optional): Specify the username to attempt authentication. If not provided, the script will use a default username.
+* -f `<fuzz_length>` (optional): Specify the length of the randomly generated password for fuzzing. If not provided, the script will not perform password fuzzing.
 3. The script will start attempting SSH connections using the provided parameters. If valid credentials are found, they will be saved in a file named credentials.txt in the same directory as the script.
 
 If you encounter issues with firewalls or detection systems, you can try utilizing the following techniques:
